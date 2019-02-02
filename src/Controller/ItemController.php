@@ -28,10 +28,15 @@ class ItemController extends FOSRestController implements ClassResourceInterface
     }
 
     public function postAction(Request $request){
+
+        $name = $request->get('name');
+        $sell_in = $request->get('sell_in');
+        $quality = $request->get('quality');
+
         $item = new Item();
-        $item->setName($request->get('name'));
-        $item->setSell_in($request->get('sell_in'));
-        $item->setQuality($request->get('quality'));
+        $item->setName($name);
+        $item->setSell_in($sell_in);
+        $item->setQuality($quality);
         
         /** EntityManager $em */
         $em = $this->doctrine->getEntityManager();
@@ -41,12 +46,12 @@ class ItemController extends FOSRestController implements ClassResourceInterface
             $em->flush();
         }catch(UniqueConstraintViolationException $e){
             return new JsonResponse(
-                "item already exists"
+                "item  ".$name. " already exists"
             );
         }
     
         return new JsonResponse(
-            "item created"
+            "item ".$name. " created"
         );
 
     }
