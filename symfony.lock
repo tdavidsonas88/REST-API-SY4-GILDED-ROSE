@@ -17,6 +17,30 @@
     "doctrine/common": {
         "version": "v2.10.0"
     },
+    "doctrine/dbal": {
+        "version": "v2.9.2"
+    },
+    "doctrine/doctrine-bundle": {
+        "version": "1.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.6",
+            "ref": "453e89b78ded666f351617baca5ae40d20622351"
+        }
+    },
+    "doctrine/doctrine-cache-bundle": {
+        "version": "1.3.5"
+    },
+    "doctrine/doctrine-migrations-bundle": {
+        "version": "1.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.2",
+            "ref": "c1431086fec31f17fbcfe6d6d7e92059458facc1"
+        }
+    },
     "doctrine/event-manager": {
         "version": "v1.0.0"
     },
@@ -28,6 +52,12 @@
     },
     "doctrine/lexer": {
         "version": "v1.0.1"
+    },
+    "doctrine/migrations": {
+        "version": "v2.0.0"
+    },
+    "doctrine/orm": {
+        "version": "v2.6.3"
     },
     "doctrine/persistence": {
         "version": "v1.1.0"
@@ -83,6 +113,9 @@
     "hoa/zformat": {
         "version": "1.17.01.10"
     },
+    "jdorn/sql-formatter": {
+        "version": "v1.2.17"
+    },
     "jms/metadata": {
         "version": "2.0.0"
     },
@@ -97,6 +130,12 @@
             "version": "3.0",
             "ref": "384cec52df45f3bfd46a09930d6960a58872b268"
         }
+    },
+    "ocramius/package-versions": {
+        "version": "1.3.0"
+    },
+    "ocramius/proxy-manager": {
+        "version": "2.2.2"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -143,6 +182,9 @@
     "symfony/dependency-injection": {
         "version": "v4.2.2"
     },
+    "symfony/doctrine-bridge": {
+        "version": "v4.2.2"
+    },
     "symfony/dotenv": {
         "version": "v4.2.2"
     },
@@ -179,6 +221,9 @@
     "symfony/http-kernel": {
         "version": "v4.2.2"
     },
+    "symfony/orm-pack": {
+        "version": "v1.0.6"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"
     },
@@ -195,6 +240,9 @@
         }
     },
     "symfony/security-core": {
+        "version": "v4.2.2"
+    },
+    "symfony/stopwatch": {
         "version": "v4.2.2"
     },
     "symfony/templating": {
@@ -220,5 +268,11 @@
     },
     "willdurand/negotiation": {
         "version": "v2.3.1"
+    },
+    "zendframework/zend-code": {
+        "version": "3.3.1"
+    },
+    "zendframework/zend-eventmanager": {
+        "version": "3.2.1"
     }
 }

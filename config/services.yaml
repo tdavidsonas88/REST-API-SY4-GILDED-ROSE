@@ -25,3 +25,8 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # The FosRestBundle is incompatible with Sensio ExtraBundle So we need to add this
+    # configration to define the view listener in the services.yaml file.
+    sensio_framework_extra.view.listener:
+        alias: Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener
