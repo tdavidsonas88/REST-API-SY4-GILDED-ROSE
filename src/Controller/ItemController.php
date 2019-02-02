@@ -7,6 +7,7 @@ use \FOS\RestBundle\View\View;
 use \Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 use \Symfony\Component\HttpFoundation\Response;
+use Doctrine\Common\Persistence\ManagerRegistry;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Routing\ClassResourceInterface;
@@ -18,6 +19,14 @@ use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 */
 class ItemController extends FOSRestController implements ClassResourceInterface {
 
+    /** ManagerRegistry $doctrine */
+    private $doctrine;
+
+    public function __construct(ManagerRegistry $doctrine)
+    {
+        $this->doctrine = $doctrine;
+    }
+
     public function postAction(Request $request){
         $item = new Item();
         $item->setName($request->get('name'));
@@ -25,7 +34,7 @@ class ItemController extends FOSRestController implements ClassResourceInterface
         $item->setQuality($request->get('quality'));
         
         /** EntityManager $em */
-        $em = $this->get('doctrine')->getEntityManager();
+        $em = $this->doctrine->getEntityManager();
 
         try{
             $em->persist($item);
@@ -46,7 +55,7 @@ class ItemController extends FOSRestController implements ClassResourceInterface
         $name = $request->get('name');
 
         /** EntityManager $em */
-        $em = $this->get('doctrine')->getEntityManager();
+        $em = $this->doctrine->getEntityManager();
 
         $query = $em->createQuery(
             'SELECT i FROM App\Entity\Item i where i.name = :name'
