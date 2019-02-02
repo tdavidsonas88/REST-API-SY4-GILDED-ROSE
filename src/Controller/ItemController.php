@@ -41,4 +41,27 @@ class ItemController extends FOSRestController implements ClassResourceInterface
         );
 
     }
+
+    public function getAction(Request $request){
+        $name = $request->get('name');
+
+        /** EntityManager $em */
+        $em = $this->get('doctrine')->getEntityManager();
+
+        $query = $em->createQuery(
+            'SELECT i FROM App\Entity\Item i where i.name = :name'
+        )->setParameter('name', $name);;
+
+        $item = $query->getArrayResult();
+
+        if ($item === null || empty($item)) {
+            $result = 'item ' .$name. ' not found';
+        }else {
+             $result = $item ;
+        }
+
+        return new JsonResponse(
+            $result
+        );
+    }
 }
