@@ -71,7 +71,7 @@ class ItemController extends FOSRestController implements ClassResourceInterface
         if ($item === null || empty($item)) {
             $result = 'item ' .$name. ' not found';
         }else {
-             $result = $item ;
+             $result = $item[0] ;
         }
 
         return new JsonResponse(

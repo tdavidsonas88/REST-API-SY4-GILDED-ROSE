@@ -13,7 +13,7 @@ class ItemService {
 
         // echo $response->getStatusCode(); # 200
         // echo $response->getHeaderLine('content-type'); # 'application/json; charset=utf8'
-        $rez = $response->getBody(); 
+        $rez = json_decode($response->getBody(), true); 
         return $rez;
         
     }
