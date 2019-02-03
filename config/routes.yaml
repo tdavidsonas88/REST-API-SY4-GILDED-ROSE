@@ -5,3 +5,7 @@
 item:
     type: rest
     resource: App\Controller\ItemController
+
+items:
+    type: rest
+    resource: App\Controller\ItemsController

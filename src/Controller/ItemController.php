@@ -78,4 +78,5 @@ class ItemController extends FOSRestController implements ClassResourceInterface
             $result
         );
     }
+
 }
